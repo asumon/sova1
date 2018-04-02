@@ -7,6 +7,7 @@ using System.Text;
 
 namespace SovaDataBase
 {
+    //implementation for IPostService
      public class PostService : IPostService
     {
         public SovaDbContext context { get; set; }
