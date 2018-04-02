@@ -18,7 +18,7 @@ namespace SovaDataBase
 
         IEnumerable<Post> IPostService.GetAllPost()
         {
-            var posts = context.Posts.Include(p=>p.User);
+            var posts = context.Posts.Include(p => p.User);
             return posts;
         }
     }
