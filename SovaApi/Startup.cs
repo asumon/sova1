@@ -10,6 +10,10 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using SovaDataBase;
 using Microsoft.EntityFrameworkCore;
+using AutoMapper;
+
+
+using Logics;
 
 namespace SovaApi
 {
@@ -25,8 +29,12 @@ namespace SovaApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAutoMapper();
             services.AddDbContext<SovaDbContext>(options => options.UseMySql(Configuration.GetConnectionString("SovaAppDb")));
+            services.AddTransient<IPostService, PostService>();
             services.AddMvc();
+            
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SovaDataBase", "SovaDataBase\SovaDataBase.csproj", "{AF9B5006-97B6-42EC-9AC1-8CC019C95D24}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SovaDataBase", "SovaDataBase\SovaDataBase.csproj", "{AF9B5006-97B6-42EC-9AC1-8CC019C95D24}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainModels", "DomainModels\DomainModels.csproj", "{3B4C56C3-0DB6-4EDE-8DBB-62A631D7E723}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DomainModels", "DomainModels\DomainModels.csproj", "{3B4C56C3-0DB6-4EDE-8DBB-62A631D7E723}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{7B77F64B-3906-43BD-B72E-04343E8BA9DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "DataAccess\DataAccess.csproj", "{7B77F64B-3906-43BD-B72E-04343E8BA9DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logics", "Logics\Logics.csproj", "{CFD9032E-B766-4C24-AE9A-F18079F64755}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Logics", "Logics\Logics.csproj", "{CFD9032E-B766-4C24-AE9A-F18079F64755}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SovaApi", "SovaApi\SovaApi.csproj", "{AE783DA2-5E53-4CA1-B42E-F6CAC2578A78}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SovaApi", "SovaApi\SovaApi.csproj", "{AE783DA2-5E53-4CA1-B42E-F6CAC2578A78}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

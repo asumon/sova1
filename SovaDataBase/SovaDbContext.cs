@@ -15,7 +15,7 @@ namespace SovaDataBase
 
         }
 
-        public DbSet<Posttype> posttypes { get; set; }
+        public DbSet<Posttype> PostType { get; set; }
 
         public DbSet<Post> Posts { get; set; }
 
@@ -28,6 +28,7 @@ namespace SovaDataBase
 
 
             modelBuilder.Entity<Post>().ToTable("posts");
+            modelBuilder.Entity<Post>().Property(x => x.CloseDate).HasColumnName("closedate");
             modelBuilder.Entity<Post>().Property(x => x.Id).HasColumnName("postid");
             modelBuilder.Entity<Post>().Property(x => x.ParentId).HasColumnName("parentid");
             modelBuilder.Entity<Post>().Property(x => x.AcceptedanswerId).HasColumnName("acceptedanswerid");
