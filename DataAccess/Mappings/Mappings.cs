@@ -10,7 +10,15 @@ namespace DataAccess.Mappings
     {
         public Mappings()
         {
+
+
             CreateMap<Post, PostDTO>();
+
+            CreateMap<User, UserForPostDTO>();
+
+
+            CreateMap<User, UserDTO>().ForMember(dest => dest.Posts, opt => opt.Ignore());
+
         }
     }
 }

@@ -14,6 +14,7 @@ using AutoMapper;
 
 
 using Logics;
+using Logics.Interfaces;
 
 namespace SovaApi
 {
@@ -32,8 +33,12 @@ namespace SovaApi
             services.AddAutoMapper();
             services.AddDbContext<SovaDbContext>(options => options.UseMySql(Configuration.GetConnectionString("SovaAppDb")));
             services.AddTransient<IPostService, PostService>();
-            services.AddMvc();
-            
+            services.AddTransient<IUserServices, UserServices>();
+            services.AddMvc()
+                .AddJsonOptions(
+                    options => options.SerializerSettings.ReferenceLoopHandling
+                        = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+
 
         }
 

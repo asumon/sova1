@@ -19,7 +19,7 @@ namespace DataAccess
 
 
         public int UserId { get; set; }
-        public User User { get; set; }
+        public UserForPostDTO User { get; set; }
 
         public Posttype PostType { get; set; }
         public int PosttypeId { get; set; }

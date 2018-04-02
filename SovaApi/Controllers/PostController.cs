@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using DataAccess;
 using DomainModels;
 using Logics;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace SovaApi.Controllers
 {
@@ -21,12 +23,13 @@ namespace SovaApi.Controllers
         }
 
         [HttpGet("/api/allposts")]
-        public IEnumerable<Post> GetAllPosts()
+        public async Task<IEnumerable<Post>> GetAllPosts()
         {
-            var posts = postservice.GetAllPost();
+            var posts = await postservice.GetAllPost().ToListAsync();
 
 
-            return mapper.Map<List<Post>>(posts);
+            return mapper.Map<List<Post>>(posts); 
+               
         }
        
 

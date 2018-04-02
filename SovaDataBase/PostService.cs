@@ -3,6 +3,7 @@ using Logics;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace SovaDataBase
@@ -17,9 +18,10 @@ namespace SovaDataBase
             this.context = context;
         }
 
-        IEnumerable<Post> IPostService.GetAllPost()
+        IQueryable<Post> IPostService.GetAllPost()
         {
-            var posts = context.Posts.Include(p => p.User);
+            var posts = context.Posts.Take(10).Include(x => x.User);
+           
             return posts;
         }
     }

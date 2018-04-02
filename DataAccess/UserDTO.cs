@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
 
-namespace DomainModels
+namespace DataAccess
 {
-    public class User
+    public class UserDTO
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -13,12 +13,14 @@ namespace DomainModels
         public string Location { get; set; }
         public int? Age { get; set; }
 
-        public virtual ICollection<Post> Posts { get; set; }
+        public virtual ICollection<PostDTO> Posts { get; set; }
 
-        public User()
+        public UserDTO()
         {
-            Posts = new Collection<Post>();
+            Posts = new Collection<PostDTO>();
         }
+
+
 
     }
 }

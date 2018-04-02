@@ -11,6 +11,7 @@ namespace SovaDataBase
         public SovaDbContext(DbContextOptions<SovaDbContext> options)
             : base(options)
         {
+
             
 
         }
@@ -18,12 +19,16 @@ namespace SovaDataBase
         public DbSet<Posttype> PostType { get; set; }
 
         public DbSet<Post> Posts { get; set; }
+        public DbSet<User> Users { get; set; }
+
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Posttype>().ToTable("posttype");
             modelBuilder.Entity<Posttype>().Property(x => x.Id).HasColumnName("posttypeid");
             modelBuilder.Entity<Posttype>().Property(x => x.Name).HasColumnName("posttype");
+           
             
 
 
@@ -34,9 +39,13 @@ namespace SovaDataBase
             modelBuilder.Entity<Post>().Property(x => x.AcceptedanswerId).HasColumnName("acceptedanswerid");
             modelBuilder.Entity<Post>().Property(x => x.PosttypeId).HasColumnName("post_type_id");
             modelBuilder.Entity<Post>().Property(x => x.UserId).HasColumnName("user_id");
+            modelBuilder.Entity<Post>().HasOne(u => u.User).WithMany(p => p.Posts).HasForeignKey(u => u.UserId);
 
             modelBuilder.Entity<User>().ToTable("users");
             modelBuilder.Entity<User>().Property(x => x.Id).HasColumnName("userid");
+            modelBuilder.Entity<User>().Property(x => x.Location).HasColumnName("userlocation");
+            modelBuilder.Entity<User>().Property(x => x.Name).HasColumnName("username");
+           
             
 
 
