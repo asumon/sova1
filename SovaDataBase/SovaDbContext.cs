@@ -24,9 +24,21 @@ namespace SovaDataBase
             modelBuilder.Entity<Posttype>().ToTable("posttype");
             modelBuilder.Entity<Posttype>().Property(x => x.Id).HasColumnName("posttypeid");
             modelBuilder.Entity<Posttype>().Property(x => x.Name).HasColumnName("posttype");
+            
 
 
             modelBuilder.Entity<Post>().ToTable("posts");
+            modelBuilder.Entity<Post>().Property(x => x.Id).HasColumnName("postid");
+            modelBuilder.Entity<Post>().Property(x => x.ParentId).HasColumnName("parentid");
+            modelBuilder.Entity<Post>().Property(x => x.AcceptedanswerId).HasColumnName("acceptedanswerid");
+            modelBuilder.Entity<Post>().Property(x => x.PosttypeId).HasColumnName("post_type_id");
+            modelBuilder.Entity<Post>().Property(x => x.UserId).HasColumnName("user_id");
+
+            modelBuilder.Entity<User>().ToTable("users");
+            modelBuilder.Entity<User>().Property(x => x.Id).HasColumnName("userid");
+            
+
+
             
 
         }
