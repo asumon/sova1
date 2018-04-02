@@ -1,5 +1,6 @@
 ﻿using DomainModels;
 using Logics;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -17,7 +18,7 @@ namespace SovaDataBase
 
         IEnumerable<Post> IPostService.GetAllPost()
         {
-            var posts = context.Posts;
+            var posts = context.Posts.Include(p=>p.User);
             return posts;
         }
     }
