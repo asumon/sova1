@@ -1,6 +1,7 @@
 ﻿using DomainModels;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 
 namespace DataAccess
@@ -23,5 +24,7 @@ namespace DataAccess
 
         public Posttype PostType { get; set; }
         public int PosttypeId { get; set; }
+
+       
     }
 }

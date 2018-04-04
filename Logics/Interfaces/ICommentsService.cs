@@ -6,9 +6,9 @@ using System.Text;
 
 namespace Logics.Interfaces
 {
-    public interface IUserServices
+    public interface ICommentsService
     {
-        IQueryable<User> GetAllUser();
-       
+        IQueryable<Comments> GetAllCommentsForPost(int postId);
+
     }
 }

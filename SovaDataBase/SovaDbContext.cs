@@ -20,6 +20,8 @@ namespace SovaDataBase
 
         public DbSet<Post> Posts { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<Comments> Comments { get; set; }
+
 
 
 
@@ -45,6 +47,15 @@ namespace SovaDataBase
             modelBuilder.Entity<User>().Property(x => x.Id).HasColumnName("userid");
             modelBuilder.Entity<User>().Property(x => x.Location).HasColumnName("userlocation");
             modelBuilder.Entity<User>().Property(x => x.Name).HasColumnName("username");
+
+
+            modelBuilder.Entity<Comments>().ToTable("comments");
+            modelBuilder.Entity<Comments>().Property(x => x.Id).HasColumnName("commentid");
+            modelBuilder.Entity<Comments>().Property(x => x.PostId).HasColumnName("postid");
+            modelBuilder.Entity<Comments>().Property(x => x.Commentscore).HasColumnName("commentscore");
+            modelBuilder.Entity<Comments>().Property(x => x.UserId).HasColumnName("userid");
+            modelBuilder.Entity<Comments>().Property(x => x.CommentDate).HasColumnName("commentcreatedate");
+
            
             
 

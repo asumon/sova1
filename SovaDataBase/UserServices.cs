@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace SovaDataBase
 {
@@ -15,7 +16,7 @@ namespace SovaDataBase
         {
             this.context = dbContext;
         }
-        public IEnumerable<User> GetAllUser()
+        public IQueryable<User> GetAllUser()
         {
             var users = context.Users;
 

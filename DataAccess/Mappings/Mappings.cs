@@ -19,6 +19,8 @@ namespace DataAccess.Mappings
 
             CreateMap<User, UserDTO>().ForMember(dest => dest.Posts, opt => opt.Ignore());
 
+            CreateMap<Comments, CommentDTO>();
+
         }
     }
 }

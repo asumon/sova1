@@ -9,5 +9,8 @@ namespace Logics
     public interface IPostService
     {
         IQueryable<Post> GetAllPost();
+        IQueryable<Post> GetAllPostForUser(int userid);
     }
+
+    
 }

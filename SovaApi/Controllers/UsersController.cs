@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace SovaApi.Controllers
 {
@@ -23,10 +24,12 @@ namespace SovaApi.Controllers
         }
 
         [HttpGet("/api/allusers")]
-        public IEnumerable<User> GetAllUsers()
+        public async Task<IEnumerable<User>> GetAllUsers()
         {
-            var users = UserServices.GetAllUser();
-            return mapper.Map<List<User>>(users);
+            var users = await UserServices.GetAllUser().ToListAsync();
+            return  mapper.Map<List<User>>(users);
         }
+
+
     }
 }

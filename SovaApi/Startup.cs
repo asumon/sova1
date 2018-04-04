@@ -11,8 +11,6 @@ using Microsoft.Extensions.Options;
 using SovaDataBase;
 using Microsoft.EntityFrameworkCore;
 using AutoMapper;
-
-
 using Logics;
 using Logics.Interfaces;
 
@@ -34,6 +32,7 @@ namespace SovaApi
             services.AddDbContext<SovaDbContext>(options => options.UseMySql(Configuration.GetConnectionString("SovaAppDb")));
             services.AddTransient<IPostService, PostService>();
             services.AddTransient<IUserServices, UserServices>();
+            services.AddTransient<ICommentsService, CommentService>();
             services.AddMvc()
                 .AddJsonOptions(
                     options => options.SerializerSettings.ReferenceLoopHandling
