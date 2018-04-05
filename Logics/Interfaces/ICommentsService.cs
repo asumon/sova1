@@ -8,7 +8,7 @@ namespace Logics.Interfaces
 {
     public interface ICommentsService
     {
-        IQueryable<Comments> GetAllCommentsForPost(int postId);
+      //  IQueryable<Comments> GetAllCommentsForPost(int postId);
 
     }
 }

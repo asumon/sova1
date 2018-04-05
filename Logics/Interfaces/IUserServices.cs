@@ -9,6 +9,7 @@ namespace Logics.Interfaces
     public interface IUserServices
     {
         IQueryable<User> GetAllUser();
+        IEnumerable<User> GetUserById(int id);
        
     }
 }

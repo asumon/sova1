@@ -10,6 +10,8 @@ namespace Logics
     {
         IQueryable<Post> GetAllPost();
         IQueryable<Post> GetAllPostForUser(int userid);
+        IQueryable<Post> GetAllAnswerForPost(int postid);
+        IEnumerable<Post> GetPostById(int postid);
     }
 
     

@@ -21,6 +21,7 @@ namespace SovaDataBase
         public DbSet<Post> Posts { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Comments> Comments { get; set; }
+        public DbSet<Tag> Tag { get; set; }
 
 
 
@@ -41,7 +42,7 @@ namespace SovaDataBase
             modelBuilder.Entity<Post>().Property(x => x.AcceptedanswerId).HasColumnName("acceptedanswerid");
             modelBuilder.Entity<Post>().Property(x => x.PosttypeId).HasColumnName("post_type_id");
             modelBuilder.Entity<Post>().Property(x => x.UserId).HasColumnName("user_id");
-            modelBuilder.Entity<Post>().HasOne(u => u.User).WithMany(p => p.Posts).HasForeignKey(u => u.UserId);
+            //modelBuilder.Entity<Post>().HasOne(u => u.User).WithMany(p => p.Posts).HasForeignKey(u => u.UserId);
 
             modelBuilder.Entity<User>().ToTable("users");
             modelBuilder.Entity<User>().Property(x => x.Id).HasColumnName("userid");
@@ -51,16 +52,23 @@ namespace SovaDataBase
 
             modelBuilder.Entity<Comments>().ToTable("comments");
             modelBuilder.Entity<Comments>().Property(x => x.Id).HasColumnName("commentid");
-            modelBuilder.Entity<Comments>().Property(x => x.PostId).HasColumnName("postid");
+            //modelBuilder.Entity<Comments>().Property(x => x.PostId).HasColumnName("postid");
             modelBuilder.Entity<Comments>().Property(x => x.Commentscore).HasColumnName("commentscore");
             modelBuilder.Entity<Comments>().Property(x => x.UserId).HasColumnName("userid");
             modelBuilder.Entity<Comments>().Property(x => x.CommentDate).HasColumnName("commentcreatedate");
 
-           
-            
+
+            // modelBuilder.Entity<Tag>().ToTable("tags");
+            // modelBuilder.Entity<PostTag>().ToTable("posts_tags");
+           // modelBuilder.Entity<PostTag>().HasKey(x => new { x.post_id, x.tag_id });
+
+            //modelBuilder.Entity<PostTag>()
+            //.HasKey(bc => new { bc.post_id, bc.tag_id });
 
 
+
             
+
 
         }
     }

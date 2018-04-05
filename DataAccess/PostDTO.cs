@@ -24,7 +24,17 @@ namespace DataAccess
 
         public Posttype PostType { get; set; }
         public int PosttypeId { get; set; }
-
        
+       
+
+        public ICollection<CommentDTO> Comments { get; set; }
+
+
+        public PostDTO()
+        {
+            Comments = new Collection<CommentDTO>();
+            
+        }
+
     }
 }

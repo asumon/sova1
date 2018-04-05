@@ -22,5 +22,11 @@ namespace SovaDataBase
 
             return users;
         }
+
+        public IEnumerable<User> GetUserById(int id)
+        {
+            var userById = context.Users.Where(x => x.Id == id);
+            return userById;
+        }
     }
 }
