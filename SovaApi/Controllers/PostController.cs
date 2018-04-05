@@ -71,15 +71,37 @@ namespace SovaApi.Controllers
                 });
             return Ok(post);
         }
+        [HttpGet("{userid}/posts")]
+        public IActionResult GetAllPostForUser(int userid)
+        {
 
-        
+            var postForUsers = postservice.GetAllPostForUser(userid)
+                .Select(x => {
+
+                    var PostListModel = new PostListModel
+                    {
+                        Title = x.Title,
+
+                    };
+                    PostListModel.Url = Url.Link(nameof(GetPostById), new { x.Id });
+
+                    return PostListModel;
+
+                });
+
+
+
+            return Ok(postForUsers);
+
+        }
+
 
         //[HttpGet("{id}", Name =nameof(GetCommentsForPost))]
         //public  async Task<IEnumerable<Comments>> GetCommentsForPost(int id){
 
         //    var comments = await commentsService.GetAllCommentsForPost(id).ToListAsync();
         //    return mapper.Map<List<Comments>>(comments);
-            
+
         //}
 
         //[HttpGet("/{userid}")]
@@ -91,9 +113,9 @@ namespace SovaApi.Controllers
         //    return mapper.Map<List<Post>>(postForUsers);
 
         //}
-        
 
-       
 
-        }
+
+
+    }
     }

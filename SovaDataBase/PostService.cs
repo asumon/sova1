@@ -25,7 +25,7 @@ namespace SovaDataBase
             return posts;
         }
 
-        IQueryable<Post> IPostService.GetAllPostForUser(int userid)
+        public IEnumerable<Post> GetAllPostForUser(int userid)
         {
             var postForUsers = context.Posts.Where(x => x.UserId == userid);
             return postForUsers;

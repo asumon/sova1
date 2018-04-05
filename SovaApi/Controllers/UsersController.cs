@@ -10,20 +10,23 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using System.Xml.Linq;
 using SovaApi.Models;
+using Logics;
 
 namespace SovaApi.Controllers
 {
-    [Route("/api/allusers")]
+    [Route("/api/users")]
     public class UsersController : Controller
     {
         public IUserServices UserServices;
         public IMapper mapper;
+        public IPostService postService;
 
 
-        public UsersController(IUserServices UserServices, IMapper mapper)
+        public UsersController(IUserServices UserServices, IMapper mapper, IPostService postService)
         {
             this.UserServices = UserServices;
             this.mapper = mapper;
+            this.postService = postService;
         }
 
         [HttpGet]
@@ -61,5 +64,11 @@ namespace SovaApi.Controllers
 
             return Ok(User);
         }
+
+       
+
+
+
+
     }
 }
